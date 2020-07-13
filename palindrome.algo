@@ -1,0 +1,37 @@
+ALGORITHM palindrome
+VAR
+                      //"kayak"
+
+  str: STRING;
+
+
+BEGIN
+   
+    write   ("give a word");
+    read(str);
+
+   FUNCTION ispalindrome(str) : BOOLEAN
+   
+   VAR
+   i: INTEGER;
+       
+   BEGIN
+       
+        IF (str.length <=1) THEN
+            
+            RETURN true;
+       
+        END_IF
+       IF (str[0]<>str[str.length-1]) THEN
+           
+           
+           RETURN false;
+
+       END_IF
+        
+        RETURN ispalindrome(str.sustr(1,str.length -2));
+   
+    END
+
+
+END
